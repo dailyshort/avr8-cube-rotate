@@ -1,5 +1,5 @@
-#ifndef CUBE_ROTATE_ASM_DEFS_INC
-#define CUBE_ROTATE_ASM_DEFS_INC
+#ifndef AVR8_CUBE_ROTATE_ASM_DEFS_INC
+#define AVR8_CUBE_ROTATE_ASM_DEFS_INC
 
 #define __SFR_OFFSET 0
 #include <avr/io.h>

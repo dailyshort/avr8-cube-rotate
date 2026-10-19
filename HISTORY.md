@@ -1,6 +1,6 @@
-# Reconstructed Git History
+# avr8-cube-rotate: Reconstructed Git History
 
-This repository's commit history was reconstructed on 2026-10-19 from the
+The avr8-cube-rotate commit history was reconstructed on 2026-10-19 from the
 complete source tree that was available at that time. The commits are ordered
 to show the project's architectural dependencies; they do not claim to record
 the original dates or exact sequence of implementation.
