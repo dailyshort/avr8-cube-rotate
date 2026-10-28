@@ -1,5 +1,32 @@
 #include "include/asm_defs.inc"
 
+.macro ROTATE u, v
+    mov  tmp, arg
+    rcall sin8
+    mov  rsn, arg
+    mov  arg, tmp
+    rcall cos8
+    mov  rcs, arg
+    mov  ma, \u
+    mov  mb, rcs
+    rcall fmul
+    mov  t1, mhi
+    mov  ma, \v
+    mov  mb, rsn
+    rcall fmul
+    sub  t1, mhi
+    mov  ma, \u
+    mov  mb, rsn
+    rcall fmul
+    mov  t2, mhi
+    mov  ma, \v
+    mov  mb, rcs
+    rcall fmul
+    add  t2, mhi
+    mov  \u, t1
+    mov  \v, t2
+.endm
+
 .section .bss
 pagebuf: .space 128
 proj:    .space 16

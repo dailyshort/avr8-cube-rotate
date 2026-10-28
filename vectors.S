@@ -1,5 +1,3 @@
-#include "include/asm_defs.inc"
-
 .section .vectors, "ax", @progbits
     rjmp __reset        ; 0  RESET
     rjmp bad_isr        ; 1  INT0

@@ -7,6 +7,11 @@
 .equ USISR_8BIT, (1 << USISIF) | (1 << USIOIF) | (1 << USIPF) | (1 << USIDC)
 .equ USISR_1BIT, (1 << USISIF) | (1 << USIOIF) | (1 << USIPF) | (1 << USIDC) | (0xE << USICNT0)
 
+.macro WR byte
+    ldi  arg, \byte
+    rcall i2c_write
+.endm
+
 .text
 .global display_init
 .global display_push_page
