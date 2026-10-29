@@ -7,7 +7,6 @@
 .section .bss
 angle_x: .space 1
 angle_y: .space 1
-angle_z: .space 1
 
 .section .text
 __t0_compa_isr:
@@ -55,12 +54,10 @@ __main:
     rcall display_init
     sts angle_x, zero
     sts angle_y, zero
-    sts angle_z, zero
 
 frame:
     lds tmp, angle_x
     lds arg, angle_y
-    lds cnt, angle_z
     rcall pipeline_begin_frame
     clr page
 page_loop:
@@ -76,7 +73,4 @@ page_loop:
     lds tmp, angle_y
     subi tmp, -3
     sts angle_y, tmp
-    lds tmp, angle_z
-    subi tmp, -1
-    sts angle_z, tmp
     rjmp frame

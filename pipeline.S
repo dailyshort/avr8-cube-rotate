@@ -32,7 +32,6 @@ pagebuf: .space 128
 proj:    .space 16
 rot_x:   .space 1
 rot_y:   .space 1
-rot_z:   .space 1
 
 .section .text
 .global pipeline_begin_frame
@@ -41,7 +40,6 @@ rot_z:   .space 1
 pipeline_begin_frame:
     sts  rot_x, tmp
     sts  rot_y, arg
-    sts  rot_z, cnt
     rcall transform
     ret
 
@@ -72,8 +70,6 @@ tv_loop:
     ROTATE vy, vz
     lds  arg, rot_y
     ROTATE vz, vx
-    lds  arg, rot_z
-    ROTATE vx, vy
 
     ldi  ZH, hi8(persp)
     mov  ZL, vz
